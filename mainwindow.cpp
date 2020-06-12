@@ -6,10 +6,18 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    task_timer = new QTimer(this);
+    task_timer->setInterval(min_duration);
+
+    settings = new QSettings("appautoahead.ini", QSettings::IniFormat, this);
+
+
 }
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
 }
 
@@ -21,4 +29,5 @@ void MainWindow::on_pushButton_clicked()
     {
         qDebug() << app.name;
     }
+    manager.analyzeApplications(apps);
 }

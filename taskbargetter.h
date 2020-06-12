@@ -9,14 +9,8 @@
 #include <QVector>
 #include <QDebug>
 #include "iconconverter.h"
+#include "application.h"
 #pragma comment(lib, "user32.lib")
-
-struct Application
-{
-    HWND hwdn;
-    QString name;
-    HICON icon;
-};
 
 class TaskBarGetter
 {
