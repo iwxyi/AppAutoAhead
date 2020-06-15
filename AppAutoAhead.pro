@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     applicationruntimemanager.cpp \
+    handle2path.cpp \
     iconconverter.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,12 +26,16 @@ SOURCES += \
 HEADERS += \
     application.h \
     applicationruntimemanager.h \
+    handle2path.h \
     iconconverter.h \
     mainwindow.h \
-    taskbargetter.h
+    taskbargetter.h \
+    timeutil.h
 
 FORMS += \
     mainwindow.ui
+
+LIBS += -lpsapi -lshlwapi
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

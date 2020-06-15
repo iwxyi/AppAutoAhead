@@ -3,6 +3,7 @@
 
 #include <QVector>
 #include "application.h"
+#include "timeutil.h"
 
 class ApplicationRuntimeManager
 {

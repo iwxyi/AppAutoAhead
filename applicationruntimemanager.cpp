@@ -22,10 +22,11 @@ void ApplicationRuntimeManager::analyzeApplications(const QVector<Application> &
     // 初始化
     if (runnings.isEmpty())
     {
-        auto timestamp = getTimestamp();
+        auto timestamp = TimeUtil::getTimestamp();
+        auto ke = TimeUtil::getKe();
         foreach (auto app, apps)
         {
-            runnings.append(ApplicationRuntime{timestamp, 0, app});
+            runnings.append(ApplicationRuntime{timestamp, 0, ke, 0, app});
         }
         return ;
     }
